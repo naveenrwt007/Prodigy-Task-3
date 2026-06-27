@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="game-panel" aria-labelledby="game-title">
+            <div class="top-bar">
+                <div>
+                    <p class="eyebrow">Classic strategy game</p>
+                    <h1 id="game-title">Tic-Tac-Toe</h1>
+                </div>
+
+                <button class="icon-button" id="newRoundBtn" type="button" title="Start new round" aria-label="Start new round">
+                    &#8635;
+                </button>
+            </div>
+
+            <div class="controls" aria-label="Game settings">
+                <div class="segmented-control" role="group" aria-label="Choose game mode">
+                    <button class="segment active" type="button" data-mode="pvp">2 Players</button>
+                    <button class="segment" type="button" data-mode="ai">Vs AI</button>
+                </div>
+
+                <label class="select-label" for="difficulty">
+                    AI
+                    <select id="difficulty" disabled>
+                        <option value="easy">Easy</option>
+                        <option value="hard" selected>Hard</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="status-row">
+                <p id="statusText">Player X's turn</p>
+                <p id="roundText">Round 1</p>
+            </div>
+
+            <div class="board" id="board" aria-label="Tic-tac-toe board">
+                <button class="cell" type="button" aria-label="Row 1 column 1" data-index="0"></button>
+                <button class="cell" type="button" aria-label="Row 1 column 2" data-index="1"></button>
+                <button class="cell" type="button" aria-label="Row 1 column 3" data-index="2"></button>
+                <button class="cell" type="button" aria-label="Row 2 column 1" data-index="3"></button>
+                <button class="cell" type="button" aria-label="Row 2 column 2" data-index="4"></button>
+                <button class="cell" type="button" aria-label="Row 2 column 3" data-index="5"></button>
+                <button class="cell" type="button" aria-label="Row 3 column 1" data-index="6"></button>
+                <button class="cell" type="button" aria-label="Row 3 column 2" data-index="7"></button>
+                <button class="cell" type="button" aria-label="Row 3 column 3" data-index="8"></button>
+            </div>
+        </section>
+
+        <aside class="side-panel" aria-label="Scoreboard and actions">
+            <div class="score-grid">
+                <div class="score-box">
+                    <span class="score-label">X</span>
+                    <strong id="scoreX">0</strong>
+                </div>
+                <div class="score-box">
+                    <span class="score-label">Draws</span>
+                    <strong id="scoreDraw">0</strong>
+                </div>
+                <div class="score-box">
+                    <span class="score-label">O</span>
+                    <strong id="scoreO">0</strong>
+                </div>
+            </div>
+
+            <div class="turn-card">
+                <span class="piece-mark x-mark">X</span>
+                <span class="piece-mark o-mark">O</span>
+            </div>
+
+            <div class="actions">
+                <button id="resetScoresBtn" type="button">Reset Scores</button>
+                <button id="swapStarterBtn" type="button">O Starts</button>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
